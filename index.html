@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script>
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
+    </script> -->
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <script src="shaders.js"></script>
+    <script src="bg.js" defer ></script>
+    <header id="topbar">
+            <h1 class="logo">my Portfolio</h1>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+    <div class="container">
+        
+        <main class="projects" id="projects">
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-carousel">
+                        <div class="carousel-track" data-current="0">
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral0.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral1.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral2.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral3.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral4.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral5.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral6.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral7.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral8.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral9.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral10.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral11.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral12.png')"></div>
+                        </div>
+                        <button class="carousel-nav carousel-prev">‹</button>
+                        <button class="carousel-nav carousel-next">›</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">WebGL <br>Spectral Path Tracer</h3>
+                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline right" onclick="window.open('https://oliverhardi.github.io/webgl-pathtracer/', '_blank')">Visit Project</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-carousel">
+                        <div class="carousel-track" data-current="0">
+                            <div class="carousel-slide project-slide" style="background-image: url('images/2dpathtracer/2dpt0.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/2dpathtracer/2dpt1.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/2dpathtracer/2dpt2.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/2dpathtracer/2dpt3.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/2dpathtracer/2dpt4.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/2dpathtracer/2dpt5.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/2dpathtracer/2dpt6.png')"></div>
+                        </div>
+                        <button class="carousel-nav carousel-prev">‹</button>
+                        <button class="carousel-nav carousel-next">›</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">WebGL <br> (2D) Path Tracer</h3>
+                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline right" onclick="window.open('https://oliverhardi.github.io/2d-pt/', '_blank')" >Visit Project</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-carousel">
+                        <div class="carousel-track" data-current="0">
+                            <div class="carousel-slide project-slide" style="background-image: url('images/impulsephysics/ip0.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                        </div>
+                        <button class="carousel-nav carousel-prev">‹</button>
+                        <button class="carousel-nav carousel-next">›</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">JavaScript <br>Impulse Physics Engine</h3>
+                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline right" onclick="window.open('https://oliverhardi.github.io/js-impulse-physics/', '_blank')">Visit Project</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-carousel">
+                        <div class="carousel-track" data-current="0">
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                        </div>
+                        <button class="carousel-nav carousel-prev">‹</button>
+                        <button class="carousel-nav carousel-next">›</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">WebGL <br>Radiance Cascades</h3>
+                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline right">Visit Project</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="img-modal" id="imgModal">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <img id="modalImg">
+    </div>
+
+    <script src="carousel.js"></script>
+    
+</body>
+</html>
