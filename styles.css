@@ -43,7 +43,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -392,4 +392,18 @@ body {
   
 .img-modal.show img {
     transform: scale(1);
+}
+
+.close-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

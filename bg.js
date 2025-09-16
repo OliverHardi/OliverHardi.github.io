@@ -118,6 +118,17 @@ function createTex(){
     return texture;
 }
 
+const mouse = {x:0, y:0, down:false};
+window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX / gl.canvas.width;
+    mouse.y = 1.0 - e.clientY / gl.canvas.height;
+});
+window.addEventListener('mousedown', (e) => {
+    mouse.down = true;
+});
+window.addEventListener('mouseup', (e) => {
+    mouse.down = false;
+});
 
 let currentFb = 0;
 let frame = 0;
@@ -132,6 +143,9 @@ function draw(){
     gl.bindTexture(gl.TEXTURE_2D, textures[1-currentFb]);
     gl.uniform1i(gl.getUniformLocation(program, 'uLastFrame'), 1);
     gl.uniform1f(gl.getUniformLocation(program, 'uFrame'), frame);
+
+    gl.uniform3f(gl.getUniformLocation(program, 'uMouse'), mouse.x, mouse.y, mouse.down ? 1 : 0);
+
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
 

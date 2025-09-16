@@ -27,6 +27,8 @@ uniform vec2 uResolution;
 uniform float uFrame;
 uniform sampler2D uLastFrame;
 
+uniform vec3 uMouse;
+
 
 void main(){
     int total = 0;
@@ -47,6 +49,12 @@ void main(){
         if (total == 2 || total == 3) {
             col = vec3(1.0);
         }
+    }
+
+    vec2 aspectRatio = vec2(1., uResolution.y/uResolution.x);
+    vec2 uv = gl_FragCoord.xy/uResolution * aspectRatio;
+    if(length(uv - uMouse.xy * aspectRatio) < 0.008){
+        col = vec3(1.0);
     }
 
     fragColor = vec4(col, 1.);
@@ -98,7 +106,7 @@ float perlin(vec3 p){
 
 void main(){
     vec2 p = gl_FragCoord.xy/uResolution;
-    vec3 pos = vec3( p * 12. * vec2(uResolution.x/uResolution.y, 1.), uFrame*0.0016 );
+    vec3 pos = vec3( p * 12. * vec2(uResolution.x/uResolution.y, 1.), uFrame*0.0072 );
     float perlina = perlin(pos);
     float perlinb = perlin(pos + vec3(3.1, 7.3, 10.7));
     float t = texture(uTex, p + 0.02*vec2(perlina, perlinb)).r;
