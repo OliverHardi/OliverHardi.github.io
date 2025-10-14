@@ -3,7 +3,7 @@
 const canvas = document.getElementById('bg-canvas');
 
 window.addEventListener('scroll', () => {
-    if(window.scrollY > 0){
+    if(window.scrollY > 50){
         canvas.classList.add('blurred');
         topbar.classList.add("shrink");
     }else{
@@ -14,8 +14,8 @@ window.addEventListener('scroll', () => {
 
 
 const gl = canvas.getContext('webgl2', {depth:false});
-gl.getExtension('EXT_color_buffer_float');
-gl.getExtension('OES_texture_float_linear');
+// gl.getExtension('EXT_color_buffer_float');
+// gl.getExtension('OES_texture_float_linear');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 gl.viewport(0, 0, canvas.width, canvas.height);
@@ -29,6 +29,7 @@ if(CPU_Cores > 5){
         detail--;
     }
 }
+detail = 2;
 
 const sizex = Math.floor(canvas.width/detail);
 const sizey = Math.floor(canvas.height/detail);
@@ -168,3 +169,50 @@ function draw(){
     requestAnimationFrame(draw);
 }
 draw();
+
+
+const cursor = document.querySelector('.custom-cursor');
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+const speed = 1; // smoothing
+
+// Track mouse position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Smooth animation
+function animate() {
+  cursorX += (mouseX - cursorX) * speed;
+  cursorY += (mouseY - cursorY) * speed;
+  cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Detect hover on clickable elements
+const clickable = document.querySelectorAll('a, button, .project-btn, .carousel-nav');
+
+clickable.forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+});
+
+
+let targetScroll = 0;
+let currentScroll = 0;
+
+function smoothScroll() {
+  currentScroll += (targetScroll - currentScroll) * 0.5; // easing
+  window.scrollTo(0, currentScroll);
+  requestAnimationFrame(smoothScroll);
+}
+
+window.addEventListener('wheel', e => {
+  e.preventDefault();
+  targetScroll += e.deltaY; // accumulate scroll target
+  targetScroll = Math.max(0, Math.min(targetScroll, document.body.scrollHeight - window.innerHeight));
+}, { passive: false });
+
+smoothScroll();

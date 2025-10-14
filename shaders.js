@@ -78,6 +78,11 @@ vec3 hash33(vec3 p3){
     return fract(vec3((p3.x + p3.y)*p3.z, (p3.x+p3.z)*p3.y, (p3.y+p3.z)*p3.x))*2.-1.;
 }
 
+float tanhc(float x){
+    x = clamp(x, -10.0, 10.0);
+    return (exp(2.0*x) - 1.0) / (exp(2.0*x) + 1.0);
+}
+
 float perlin(vec3 p){
     vec3 pi = floor(p);
     vec3 pf = p - pi;
@@ -104,17 +109,65 @@ float perlin(vec3 p){
     			w.y);
 }
 
+float worley(vec3 p) {
+    vec3 Pi = floor(p);
+    vec3 Pf = fract(p);
+    
+    float minDist = 10.0;
+
+    for(int xo = -1; xo <= 1; xo++) {
+        for(int yo = -1; yo <= 1; yo++) {
+            for(int zo = -1; zo <= 1; zo++) {
+                vec3 offset = vec3(xo, yo, zo);
+                vec3 cell = Pi + offset;
+
+                // random point
+                vec3 feature = hash33(cell) * 0.5 + 0.5;
+
+                vec3 diff = offset + feature - Pf;
+                float d = dot(diff, diff);
+
+                minDist = min(minDist, d);
+            }
+        }
+    }
+    // return sqrt(minDist);
+    return minDist;
+}
+
+#define C0 vec3(0., 0.188, 0.286)
+#define C1 vec3(0.84, 0.16, 0.16)
+#define C2 vec3(0.988, 0.749, 0.286)
+
+vec3 cramp(float t) {
+    t = clamp(t, 0.0, 1.0);
+    if (t < 0.5) {
+        // Blend from c0 to c1
+        return mix(C0, C1, t * 2.0);
+    } else {
+        // Blend from c1 to c2
+        return mix(C1, C2, (t - 0.5) * 2.0);
+    }
+}
+
+
 void main(){
     vec2 p = gl_FragCoord.xy/uResolution;
-    vec3 pos = vec3( p * 12. * vec2(uResolution.x/uResolution.y, 1.), uFrame*0.0072 );
-    float perlina = perlin(pos);
-    float perlinb = perlin(pos + vec3(3.1, 7.3, 10.7));
-    float t = texture(uTex, p + 0.02*vec2(perlina, perlinb)).r;
-    vec3 col = mix(vec3(0.02, 0.03, 0.04), vec3(0.6, 0.72, 0.92), t + 0.1*(1.-sqrt(abs(perlina))) );
+    vec3 pos = vec3( p * vec2(uResolution.x/uResolution.y, 1.), uFrame*0.001 );
+    float o1 = perlin(pos * 4.)*0.5+0.5;
+    float o2 = worley(pos * vec3(28., 28., 12.))*0.5+0.5;
+    float o3 = perlin(pos * vec3(2.5, 2.5, 0.2));
+    // float perlinb = perlin(pos + vec3(3.1, 7.3, 10.7));
+    float t = texture(uTex, p).r;
+    // vec3 col = mix(vec3(0.02, 0.03, 0.04), vec3(0.6, 0.72, 0.92), t + 0.1*(1.-sqrt(abs(perlina))) );
+    // vec3 bgcol = mix(vec3(0.02, 0.03, 0.04), vec3(0.6, 0.72, 0.92), tanh(perlina*1.0)*0.5+0.5 );
+    // vec3 bgcol = mix(vec3(0.), vec3(1.), o1 - o2*0.1);
+    vec3 k = mix(cramp(o1*1.5 - o2*0.24 - 0.2), C2, t);
+    vec3 col = mix(k, C0*0.5, tanhc(o3*250.0)*0.5+0.5);
+
 
     fragColor = vec4(col, 1.);
 
-    // window.scrollTo(0, 0);
 }
 `;
 
