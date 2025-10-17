@@ -5,28 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- <script>
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
-    </script> -->
+
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
     <script src="shaders.js"></script>
     <script src="bg.js" defer ></script>
     <header id="topbar">
-            <h1 class="logo">Oliver Hardi</h1>
-            <nav class="nav">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+        <h1 class="logo">Oliver Hardi</h1>
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
     <div class="container">
+
         <main class="about" id="about">
             <div class="about-me">
+                <h1 class="logo">About Me</h1>
+                <div class="bio-text">
+                    <p class="intro-paragraph">
+                        Hi, I'm <span class="highlight-name">Oliver</span> — a high school developer 
+                        focused on exploring the intersection of computer science, mathematics, 
+                        physics, and art.
+                    </p>
+                    
+                    <p class="bio-paragraph">
+                        My work focuses on <strong>computer graphics</strong> and <strong>real-time rendering</strong>, 
+                        where I use advanced techniques like path tracing and light transport approximations. 
+                        These projects were created using a basis in physics and mathematical subjects, 
+                        such as linear algebra, calculus, and statistics.
+                    </p>
+                    
+                    <p class="bio-paragraph">
+                        Beyond graphics, I'm actively exploring <strong>machine learning</strong> and its 
+                        applications in quantitative finance and algorithmic trading. I enjoy bridging 
+                        the gap between theoretical concepts and practical implementations, whether 
+                        that's rendering photorealistic images or analyzing market patterns.
+                    </p>
+                    
+                    <p class="closing-paragraph">
+                        Each project is an opportunity to learn something new and push the boundaries 
+                        of what I can create. I believe the best way to understand complex systems is 
+                        to build them from the ground up.
+                    </p>
+                </div>
+                <h2 class="subheading">Skills</h2>
+                <div class="skills">
+                    <div class="skill">Computer Graphics</div>
+                    <div class="skill">Machine Learning</div>
+                    <div class="skill">Physics Simulations</div>
+                    <div class="skill">Procedural Generation</div>
+                    <div class="skill">OpenGL/WebGL/WebGPU</div>
+                    <div class="skill">FRC Programming</div>
 
+                    <div class="skill">C++</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">GLSL/HLSL</div>
+                    <div class="skill">Web Dev (HTML/CSS)</div>
+                    <div class="skill">Java</div>
+                </div>
             </div>
         </main>
         
@@ -152,13 +192,24 @@
             </div>
         </main>
 
-        <main class="contact" id="contact">
-            <div class="contact-me">
-
-            </div>
-        </main>
 
     </div>
+
+    <main class="contact" id="contact">
+        <div class="contact-me">
+            <h1 class="logo">Contact Me</h1>
+            <p class="text">Feel free to reach out through any of these links or check out my other stuff!</p>
+            <div class="contact-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="icon" viewBox="0 0 16 16"
+                onclick="window.open('https://github.com/oliverhardi', '_blank')">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="icon" viewBox="0 0 16 16"
+                onclick="window.open('mailto:oliverlauhardi@gmail.com', '_blank')">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                </svg>
+            </div>
+    </main>
 
     <div class="img-modal" id="imgModal">
         <span class="close-btn" id="closeBtn">&times;</span>

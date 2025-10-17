@@ -171,48 +171,48 @@ function draw(){
 draw();
 
 
-const cursor = document.querySelector('.custom-cursor');
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-const speed = 1; // smoothing
+// const cursor = document.querySelector('.custom-cursor');
+// let mouseX = 0, mouseY = 0;
+// let cursorX = 0, cursorY = 0;
+// const speed = 1; // smoothing
 
-// Track mouse position
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
+// // Track mouse position
+// document.addEventListener('mousemove', (e) => {
+//     mouseX = e.clientX;
+//     mouseY = e.clientY;
+// });
 
-// Smooth animation
-function animate() {
-  cursorX += (mouseX - cursorX) * speed;
-  cursorY += (mouseY - cursorY) * speed;
-  cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
-  requestAnimationFrame(animate);
-}
-animate();
+// // Smooth animation
+// function animate() {
+//   cursorX += (mouseX - cursorX) * speed;
+//   cursorY += (mouseY - cursorY) * speed;
+//   cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+//   requestAnimationFrame(animate);
+// }
+// animate();
 
-// Detect hover on clickable elements
-const clickable = document.querySelectorAll('a, button, .project-btn, .carousel-nav');
+// // Detect hover on clickable elements
+// const clickable = document.querySelectorAll('a, button, .project-btn, .carousel-nav');
 
-clickable.forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('active'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
-});
+// clickable.forEach(el => {
+//   el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+//   el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+// });
 
 
-let targetScroll = 0;
-let currentScroll = 0;
+// let targetScroll = 0;
+// let currentScroll = 0;
 
-function smoothScroll() {
-  currentScroll += (targetScroll - currentScroll) * 0.5; // easing
-  window.scrollTo(0, currentScroll);
-  requestAnimationFrame(smoothScroll);
-}
+// function smoothScroll() {
+//   currentScroll += (targetScroll - currentScroll) * 0.5; // easing
+//   window.scrollTo(0, currentScroll);
+//   requestAnimationFrame(smoothScroll);
+// }
 
-window.addEventListener('wheel', e => {
-  e.preventDefault();
-  targetScroll += e.deltaY; // accumulate scroll target
-  targetScroll = Math.max(0, Math.min(targetScroll, document.body.scrollHeight - window.innerHeight));
-}, { passive: false });
+// window.addEventListener('wheel', e => {
+//   e.preventDefault();
+//   targetScroll += e.deltaY; // accumulate scroll target
+//   targetScroll = Math.max(0, Math.min(targetScroll, document.body.scrollHeight - window.innerHeight));
+// }, { passive: false });
 
-smoothScroll();
+// smoothScroll();
