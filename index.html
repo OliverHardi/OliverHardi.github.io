@@ -26,13 +26,13 @@
                 <h1 class="logo">About Me</h1>
                 <div class="bio-text">
                     <p class="intro-paragraph">
-                        Hi, I'm <span class="highlight-name">Oliver</span> — a high school developer 
+                        Hi, I'm <span class="highlight-name">Oliver</span> — a self-taught high school developer 
                         focused on exploring the intersection of computer science, mathematics, 
                         physics, and art.
                     </p>
                     
                     <p class="bio-paragraph">
-                        My work focuses on <strong>computer graphics</strong> and <strong>real-time rendering</strong>, 
+                        My past work has a strong focus on <strong>computer graphics</strong> and <strong>real-time rendering</strong>, 
                         where I use advanced techniques like path tracing and light transport approximations. 
                         These projects were created using a basis in physics and mathematical subjects, 
                         such as linear algebra, calculus, and statistics.
@@ -46,8 +46,7 @@
                     </p>
                     
                     <p class="closing-paragraph">
-                        Each project is an opportunity to learn something new and push the boundaries 
-                        of what I can create. I believe the best way to understand complex systems is 
+                        I try to build experience through long-term personal projects. I believe the best way to understand complex systems is 
                         to build them from the ground up.
                     </p>
                 </div>
@@ -74,20 +73,16 @@
             <div class="project-card">
                 <div class="project-image">
                     <div class="project-carousel">
-                        <div class="carousel-track" data-current="0">
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral0.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral1.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral2.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral3.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral4.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral5.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral6.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral7.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral8.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral9.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral10.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral11.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/spectralpt/spectral12.png')"></div>
+                        <div class="carousel-track" data-current="0" id="spectralpt">
+                            <script>
+                            const container0 = document.getElementById('spectralpt');
+                            for (let i = 0; i < 19; i++) { // 19 images
+                                const slide = document.createElement('div');
+                                slide.className = 'carousel-slide project-slide';
+                                slide.style.backgroundImage = `url('images/spectralpt/spectral${i}.png')`;
+                                container0.appendChild(slide);
+                            }
+                            </script>
                         </div>
                         <button class="carousel-nav carousel-prev">‹</button>
                         <button class="carousel-nav carousel-next">›</button>
@@ -103,13 +98,17 @@
             <div class="project-card">
                 <div class="project-image">
                     <div class="project-carousel">
-                        <div class="carousel-track" data-current="0">
-                            <div class="carousel-slide project-slide" style="background-image: url('images/fractalpt/fractal0.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/fractalpt/fractal1.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/fractalpt/fractal2.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('images/fractalpt/fractal3.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                        <div class="carousel-track" data-current="0" id="fractalpt">
+
+                            <script>
+                            const container1 = document.getElementById('fractalpt');
+                            for (let i = 0; i < 16; i++) { // 16 images
+                                const slide = document.createElement('div');
+                                slide.className = 'carousel-slide project-slide';
+                                slide.style.backgroundImage = `url('images/fractalpt/fractal${i}.png')`;
+                                container1.appendChild(slide);
+                            }
+                            </script>
                         </div>
                         <button class="carousel-nav carousel-prev">‹</button>
                         <button class="carousel-nav carousel-next">›</button>
@@ -150,12 +149,7 @@
                     <div class="project-carousel">
                         <div class="carousel-track" data-current="0">
                             <div class="carousel-slide project-slide" style="background-image: url('images/impulsephysics/ip0.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
-                            <div class="carousel-slide project-slide" style="background-image: url('https://dummyimage.com/600x400/355061/90afdb.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/impulsephysics/ip1.png')"></div>
                         </div>
                         <button class="carousel-nav carousel-prev">‹</button>
                         <button class="carousel-nav carousel-next">›</button>

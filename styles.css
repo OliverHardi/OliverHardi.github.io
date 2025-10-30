@@ -339,7 +339,7 @@ body::-webkit-scrollbar {
 }
 
 .unfinished::after {
-    content: "unfinished";
+    content: "coming soon!";
     position: absolute;
     bottom: 120%;
     left: 50%;
