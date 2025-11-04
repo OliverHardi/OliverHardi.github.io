@@ -76,7 +76,7 @@
                         <div class="carousel-track" data-current="0" id="spectralpt">
                             <script>
                             const container0 = document.getElementById('spectralpt');
-                            for (let i = 0; i < 19; i++) { // 19 images
+                            for (let i = 0; i < 20; i++) { // 20 images
                                 const slide = document.createElement('div');
                                 slide.className = 'carousel-slide project-slide';
                                 slide.style.backgroundImage = `url('images/spectralpt/spectral${i}.png')`;
@@ -144,6 +144,41 @@
                     </p>
                     <p>
                         The camera lens simulation in this project is also more advanced, allowing for more realistic images.
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-carousel">
+                        <div class="carousel-track" data-current="0" id="barneshut">
+                            <div class="carousel-slide project-slide" style="background-image: url('images/barneshut/barneshut0.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/barneshut/barneshut1.png')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('images/barneshut/barneshut2.png')"></div>
+                        </div>
+                        <button class="carousel-nav carousel-prev">‹</button>
+                        <button class="carousel-nav carousel-next">›</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">C++ and OpenGL <br>Barnes-hut N-body Simulation</h3>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
+                    <button class="project-btn outline right" onclick="window.open('https://github.com/OliverHardi/barnes-hut/', '_blank')">Visit Project</button>
+                </div>
+
+                <div class="project-details">
+                    <p>
+                        This is a C++ implementation of a large-scale N-body simulation using the Barnes-hut algorithm. <br><br>
+                        The Barnes-hut algorithm is an efficient method for simulating the gravitational interactions between a large number of bodies. 
+                        It works by recursively dividing the simulation space into a hierarchical tree structure called a quadtree.
+                        <br>
+                        Separate to the Barnes-hut algorithm, I also perform a collision detection and resolution step using a spatially hashed grid to handle collisions between bodies.
+                        <br><br>
+                        In my implementation I multithreaded the force and collision calculations to greatly improve performance.
+                        <br><br>
+                        The circles are rendered using instancing in OpenGL for efficiency.
                     </p>
                 </div>
 
