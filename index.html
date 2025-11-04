@@ -90,9 +90,26 @@
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">WebGL <br>Spectral Path Tracer</h3>
-                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
                     <button class="project-btn outline right" onclick="window.open('https://oliverhardi.github.io/webgl-pathtracer/', '_blank')">Visit Project</button>
                 </div>
+                
+                <div class="project-details">
+                    <p>
+                        This is a physically based path tracer implemented in JavaScript and WebGL. It simulates light transport in a 3D simulation,
+                        built entirely from scratch.
+                        
+                    </p>
+                    <ul class="feature-list">
+                        <li>Spectral wavelength based rendering</li>
+                        <li>A custom BVH (bounding volume hierarchy) implementation</li>
+                        <li>Supports gltf separated file imports (.gltf and .bin)</li>
+                        <li>MIS using environment map importance sampling</li>
+                        <li>Automatic conversion from typically stored materials to custom spectral PBR materials</li>
+                        <li>Complex camera lens simulation, using focal length, aperture radius, etc. for depth of field</li>
+                    </ul>
+                </div>
+
             </div>
 
             <div class="project-card">
@@ -116,9 +133,21 @@
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">WebGL <br>Fractal "Path marcher"</h3>
-                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
                     <button class="project-btn outline right" onclick="window.open('https://oliverhardi.github.io/fractal-pt/', '_blank')">Visit Project</button>
                 </div>
+
+                <div class="project-details">
+                    <p>
+                        This is another custom path tracer built in JavaScript and WebGL, but this time focused on rendering fractal geometry using
+                        ray marching. This project is able to render complex fractals defined by iterative mathematical functions.
+                    </p>
+                    <p>
+                        The camera lens simulation in this project is also more advanced, allowing for more realistic images.
+                    </p>
+                </div>
+
+
             </div>
 
             <div class="project-card">
@@ -139,9 +168,18 @@
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">WebGL <br> (2D) Path Tracer</h3>
-                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
                     <button class="project-btn outline right" onclick="window.open('https://oliverhardi.github.io/2d-pt/', '_blank')" >Visit Project</button>
                 </div>
+
+                <div class="project-details">
+                    <p>
+                        This is a 2 dimensional path tracer created over the span of 3 days. It simulates light transport in a 2D environment, demonstrating
+                        how light behaves differently in lower dimensions.
+                    </p>
+                </div>
+
+
             </div>
 
             <div class="project-card">
@@ -157,9 +195,21 @@
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">JavaScript <br>Impulse Physics Engine</h3>
-                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
                     <button class="project-btn outline right" onclick="window.open('https://oliverhardi.github.io/js-impulse-physics/', '_blank')">Visit Project</button>
                 </div>
+
+                <div class="project-details">
+                    <p>
+                        This is a 2D physics engine built in JavaScript using an impulse-based method for simulating rigid body dynamics.
+                        It supports various shapes, including n-sided irregular convex polygons. The engine handles collision detection in two phases:
+                    </p>
+                    <ul class="feature-list">
+                        <li>Broadphase: Utilizes Axis-Aligned Bounding Boxes (AABB) for efficient preliminary collision checks</li>
+                        <li>Narrowphase: Implements the Separating Axis Theorem (SAT) for precise collision detection between convex shapes</li>
+                </div>
+
+
             </div>
 
             <div class="project-card">
@@ -180,9 +230,17 @@
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">WebGL <br>Radiance Cascades</h3>
-                    <button class="project-btn outline unfinished">View Details</button>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
                     <button class="project-btn outline right">Visit Project</button>
                 </div>
+
+                <div class="project-details">
+                    <p>
+                        Placeholder text here
+                    </p>
+                </div>
+
+
             </div>
         </main>
 

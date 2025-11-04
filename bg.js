@@ -216,3 +216,15 @@ draw();
 // }, { passive: false });
 
 // smoothScroll();
+
+function toggleDetails(button) {
+    // Find the nearest project card
+    const card = button.closest('.project-card');
+    // Then find the details div within that card
+    const details = card.querySelector('.project-details');
+    
+    if (details) {
+        const isOpen = details.classList.toggle('open');
+        button.textContent = isOpen ? 'Hide Details' : 'View Details';
+    }
+}

@@ -3,10 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     overscroll-behavior: none;
-    /* *,
-    a, button, input, textarea, select {
-        cursor: none !important;
-    } */
+
 }
 
 body {
@@ -617,7 +614,7 @@ body::-webkit-scrollbar {
 .bio-paragraph strong {
     color: rgba(255, 255, 255, 0.95);
     font-weight: 600;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(233, 187, 155, 0.9));
+    background: linear-gradient(90deg, rgba(223, 101, 76, 0.95), rgba(233, 187, 155, 0.9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -633,7 +630,7 @@ body::-webkit-scrollbar {
     font-style: italic;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .intro-paragraph {
         font-size: 1.15rem;
@@ -646,4 +643,55 @@ body::-webkit-scrollbar {
     .closing-paragraph {
         font-size: 0.95rem;
     }
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-details.open {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.project-details p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.feature-list {
+    margin-top: 16px;
+    padding-left: 20px;
+    list-style-type: disc;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.feature-list li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.feature-list li::marker {
+    color: rgba(233, 187, 155, 0.9);
+}
+
+.feature-list li::before {
+
+    color: rgba(233, 187, 155, 0.9);
+    font-size: 0.9rem;
+    margin-right: 8px;
+    position: absolute;
+    left: -20px;
 }
