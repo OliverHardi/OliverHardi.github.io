@@ -248,6 +248,67 @@
 
             </div>
 
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-carousel">
+                        <div class="carousel-track" data-current="0">
+                            <div class="carousel-slide project-slide" style="background-image: url('https://placehold.co/600x400')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://placehold.co/600x400')"></div>
+                        </div>
+                        <button class="carousel-nav carousel-prev">‹</button>
+                        <button class="carousel-nav carousel-next">›</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Python (PyTorch) <br>ML Market Predictor</h3>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
+                    <button class="project-btn outline right" onclick="window.open('https://github.com/OliverHardi/market-prediction-lstm/', '_blank')">Visit Repo</button>
+                </div>
+
+                <div class="project-details">
+                    <p>
+                        This is a machine learning model built in Python using PyTorch to predict stock market movements based on historical data. 
+                        The model utilizes short-term indicators to make fast trades.
+                    </p>
+                    <ul class="feature-list">
+                        <li>The model uses LSTM (Long Short-Term Memory) architecture</li>
+                        <li>Uses historical stock data and technical indicators as input features</li>
+                        <li>Predicts percentage change over a future interval</li>
+                </div>
+
+
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-carousel">
+                        <div class="carousel-track" data-current="0">
+                            <div class="carousel-slide project-slide" style="background-image: url('https://placehold.co/600x400')"></div>
+                            <div class="carousel-slide project-slide" style="background-image: url('https://placehold.co/600x400')"></div>
+                        </div>
+                        <button class="carousel-nav carousel-prev">‹</button>
+                        <button class="carousel-nav carousel-next">›</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">OpenGL + CUDA <br>3D Boid Simulation</h3>
+                    <button class="project-btn outline" onclick="toggleDetails(this)">View Details</button>
+                    <button class="project-btn outline right"><s>Visit Repo</s></button>
+                </div>
+
+                <div class="project-details">
+                    <p>
+                        This is a 3D boid simulation implemented in C++ using OpenGL + CUDA interop. The boid algorithm simulates flocking behavior in birds through three main rules:
+                        separation, alignment, and cohesion. The simulation utilizes a spatial hashing algorithm to optimize the neighbor lookup to O(n).
+                    </p>
+                    <p>
+                        OpenGL compute shaders and used to handle building the hashes, which are sorted with a CUDA kernel using a radix sort.
+                    </p>
+                </div>
+
+
+            </div>
+
         </main>
 
 
